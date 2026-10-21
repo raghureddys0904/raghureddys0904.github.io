@@ -1,9 +1,245 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A colourful introduction to Navratri, the nine-night Hindu festival celebrating Goddess Durga.">
+  <title>Navratri Festival | Nine Nights of Devotion & Joy</title>
+  <style>
+    :root {
+      --maroon: #701b35;
+      --pink: #e84b79;
+      --saffron: #f59e0b;
+      --cream: #fff8ed;
+      --ink: #2b1d25;
+      --muted: #6b5961;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    header {
+      color: white;
+      background: linear-gradient(120deg, rgba(64, 10, 37, .94), rgba(135, 22, 65, .78)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Navrathri_Garba_Dance_at_Vadodara,_India.jpg?width=1800") center 42%/cover;
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      padding: 5rem max(7%, calc((100% - 1120px)/2));
+    }
+    .hero { max-width: 760px; }
+    .eyebrow {
+      display: inline-block;
+      padding: .35rem .8rem;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 7vw, 5.7rem);
+      line-height: 1.02;
+      margin: 1.2rem 0;
+    }
+    .hero p { font-size: 1.15rem; max-width: 620px; color: #fff4f5; }
+    nav {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.5rem;
+      padding: .9rem 1rem; background: #fff; position: sticky; top: 0; z-index: 5;
+      box-shadow: 0 3px 15px #35132212;
+    }
+    nav a { color: var(--maroon); font-weight: 700; text-decoration: none; font-size: .95rem; }
+    nav a:hover { color: var(--pink); }
+    main { max-width: 1120px; margin: auto; padding: 2.5rem 1.25rem 4rem; }
+    section { margin: 2.7rem 0 4rem; scroll-margin-top: 75px; }
+    .section-label { color: #b13a60; text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 800; }
+    h2 { color: var(--maroon); font: 700 clamp(2rem, 4vw, 3rem)/1.15 Georgia, serif; margin: .4rem 0 1rem; }
+    h3 { color: var(--maroon); margin: .2rem 0 .5rem; }
+    .intro { font-size: 1.1rem; max-width: 800px; color: var(--muted); }
+    .two-col { display: grid; grid-template-columns: 1.05fr .95fr; gap: 2rem; align-items: center; }
+    figure { margin: 0; }
+    figure img, .card img {
+      display: block; width: 100%; height: 100%; max-height: 420px; object-fit: cover;
+      border-radius: 18px;
+    }
+    figcaption { color: var(--muted); font-size: .82rem; margin-top: .5rem; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .card { background: #fff; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 28px #57152b0d; }
+    .card img { height: 220px; border-radius: 0; }
+    .card-body { padding: 1.2rem; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+    .highlight {
+      padding: 1.5rem 1.7rem; border-left: 5px solid var(--saffron);
+      background: #fff0d5; border-radius: 0 14px 14px 0; margin-top: 1.5rem;
+    }
+    .nine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin-top: 1.5rem; }
+    .day {
+      background: white; padding: 1rem; border-radius: 12px; border: 1px solid #f2d8df;
+    }
+    .day strong { display: block; color: var(--pink); font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+    .day span { font-weight: 750; color: var(--maroon); }
+    .gallery { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 1rem; }
+    .gallery img { width: 100%; height: 230px; object-fit: cover; border-radius: 16px; }
+    .gallery figure:first-child img { height: 300px; }
+    .gallery figure:first-child { grid-row: span 2; }
+    .gallery figcaption { padding: 0 .15rem; }
+    footer { background: #3d1025; color: #ffeaf0; padding: 2rem 1.25rem; text-align: center; }
+    footer p { margin: .3rem auto; max-width: 800px; }
+    footer a { color: #ffd17b; }
+    @media (max-width: 760px) {
+      header { min-height: 500px; padding: 4rem 1.3rem; }
+      .two-col, .cards { grid-template-columns: 1fr; }
+      .nine-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .gallery figure:first-child { grid-row: auto; grid-column: span 2; }
+      .gallery img, .gallery figure:first-child img { height: 220px; }
+    }
+    @media (max-width: 420px) { .nine-grid, .gallery { grid-template-columns: 1fr; } .gallery figure:first-child { grid-column: auto; } }
+  </style>
+</head>
 <body>
-  <h1>RAGHAVENDRA REDDY</h1>
-  <p>Welcome to my website!</p>
-  <img src="vijayadashami_rama_ravana.gif" />
-</body>
+  <header id="top">
+    <div class="hero">
+      <span class="eyebrow">A celebration of Shakti</span>
+      <h1>Navratri</h1>
+      <p><strong>Nine nights of devotion, dance and light.</strong> Navratri is a major Hindu festival honouring the divine feminine power, celebrated with prayer, music, colourful traditions and community gatherings.</p>
+    </div>
+  </header>
 
+  <nav aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#meaning">Meaning</a>
+    <a href="#nine-nights">The Nine Nights</a>
+    <a href="#celebrations">Celebrations</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+
+  <main>
+    <section id="about" class="two-col">
+      <div>
+        <span class="section-label">The festival</span>
+        <h2>What is Navratri?</h2>
+        <p class="intro">The word <em>Navratri</em> comes from Sanskrit: <em>nava</em> means “nine” and <em>ratri</em> means “night.” The festival is observed on several occasions during the year, with the most widely celebrated autumn observance known as Sharad Navratri.</p>
+        <p>Across India, devotees worship Goddess Durga and her forms, visit temples, offer prayers, fast according to family or regional customs, and gather for cultural celebrations. The dates follow the Hindu lunar calendar, so they change each year on the Gregorian calendar.</p>
+      </div>
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Navratri_Garba_Dancers.jpg?width=1200"
+             alt="Dancers in colourful traditional clothing celebrating Navratri with Garba"
+             loading="lazy">
+        <figcaption>Garba brings people together through rhythm, movement and devotion. Photo: Saurabh sirohiya / Wikimedia Commons, CC BY-SA 4.0.</figcaption>
+      </figure>
+    </section>
+
+    <section id="meaning">
+      <span class="section-label">Faith & symbolism</span>
+      <h2>The meaning behind the celebration</h2>
+      <p class="intro">Navratri honours Shakti—the divine feminine energy—and celebrates the victory of good over evil. Stories and customs differ across regions, but devotion, courage, renewal and community are common themes.</p>
+      <div class="cards">
+        <article class="card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Durga_Puja_in_Kolkata.jpg?width=900"
+               alt="A decorated Durga image at a festive worship space" loading="lazy">
+          <div class="card-body">
+            <h3>Worship of the Goddess</h3>
+            <p>Many devotees pray to Durga and her nine forms, seeking strength, wisdom, protection and well-being.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lively_Navratri_Garba_dance_performances.jpg?width=900"
+               alt="A lively group of people performing traditional Garba" loading="lazy">
+          <div class="card-body">
+            <h3>Good triumphs over evil</h3>
+            <p>The festival recalls divine strength overcoming destructive forces and encourages people to choose truth and goodness.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A_rasa_garba_dandiya_dance,_Navratri_tradition.jpg?width=900"
+               alt="People taking part in a traditional Dandiya Raas dance" loading="lazy">
+          <div class="card-body">
+            <h3>Community & renewal</h3>
+            <p>Music, dance, shared meals and gatherings help families and neighbours celebrate together.</p>
+          </div>
+        </article>
+      </div>
+      <div class="highlight"><strong>Did you know?</strong> In many parts of eastern India, the final days of Navratri overlap with Durga Puja, featuring elaborate artistic displays and community worship. In Gujarat, evening Garba and Dandiya Raas are especially popular.</div>
+    </section>
+
+    <section id="nine-nights">
+      <span class="section-label">Nine nights, many traditions</span>
+      <h2>How the nine nights are observed</h2>
+      <p>In traditions that honour the Navadurga, each day is associated with a form of Goddess Durga. Names, rituals and interpretations can vary by community.</p>
+      <div class="nine-grid">
+        <div class="day"><strong>Day 1</strong><span>Shailaputri</span><br>New beginnings and steadiness</div>
+        <div class="day"><strong>Day 2</strong><span>Brahmacharini</span><br>Devotion and discipline</div>
+        <div class="day"><strong>Day 3</strong><span>Chandraghanta</span><br>Courage and protection</div>
+        <div class="day"><strong>Day 4</strong><span>Kushmanda</span><br>Creation and vitality</div>
+        <div class="day"><strong>Day 5</strong><span>Skandamata</span><br>Care and compassion</div>
+        <div class="day"><strong>Day 6</strong><span>Katyayani</span><br>Strength and bravery</div>
+        <div class="day"><strong>Day 7</strong><span>Kalaratri</span><br>Fearlessness</div>
+        <div class="day"><strong>Day 8</strong><span>Mahagauri</span><br>Peace and purity</div>
+        <div class="day"><strong>Day 9</strong><span>Siddhidatri</span><br>Wisdom and fulfilment</div>
+      </div>
+    </section>
+
+    <section id="celebrations" class="two-col">
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/50000_people_celebrating_navrathri_with_garba_dance_in_Vadodara,_India.jpg?width=1200"
+             alt="A large crowd gathered for Navratri Garba in Vadodara, India" loading="lazy">
+        <figcaption>Large community Garba celebrations are a much-loved Navratri tradition in Gujarat. Photo: John Robert / Wikimedia Commons, CC BY-SA 4.0.</figcaption>
+      </figure>
+      <div>
+        <span class="section-label">Traditions across India</span>
+        <h2>How people celebrate</h2>
+        <ul>
+          <li><strong>Prayer and puja:</strong> Homes and temples are decorated, lamps are lit, and prayers or devotional songs are offered.</li>
+          <li><strong>Garba and Dandiya:</strong> In Gujarat and elsewhere, people dance in circles to rhythmic music, sometimes using decorated sticks for Dandiya Raas.</li>
+          <li><strong>Fasting and food:</strong> Some devotees fast or choose special meals; practices vary by household and region.</li>
+          <li><strong>Regional customs:</strong> In parts of South India, families arrange a display of dolls called <em>Golu</em> or <em>Bommai Kolu</em>. In West Bengal, Durga Puja is marked by pandals, art and community worship.</li>
+          <li><strong>Vijayadashami / Dussehra:</strong> The festival period concludes in many traditions with a celebration of victory and a fresh start.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <span class="section-label">A festival in pictures</span>
+      <h2>Colour, rhythm and devotion</h2>
+      <div class="gallery">
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Navrathri_Garba_Dance_at_Vadodara,_India.jpg?width=1000"
+               alt="A crowd performing Garba at a Navratri celebration" loading="lazy">
+          <figcaption>Garba: a dance of rhythm and togetherness.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Group_of_Navratri_Garba_dancers.jpg?width=800"
+               alt="A group of Navratri dancers in traditional dress" loading="lazy">
+          <figcaption>Traditional dress and festive energy.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Navratri_Garba_Tribal.jpg?width=800"
+               alt="Young dancers performing a traditional Navratri Raas dance" loading="lazy">
+          <figcaption>Regional dance traditions.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <div class="highlight">
+        <h3>In a nutshell</h3>
+        <p>Navratri is more than a festival: it is a time for faith, inner strength, cultural expression and community. Whether celebrated through quiet prayer, a lively Garba night, Golu displays or Durga Puja, its message is one of hope and the triumph of good.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Navratri Festival</strong> · Nine nights of devotion, dance and light</p>
+    <p>Photographs are linked from Wikimedia Commons. Please check each file page for author and licence details before reusing images elsewhere.</p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </footer>
+</body>
 </html>
